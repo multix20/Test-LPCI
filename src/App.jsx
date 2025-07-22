@@ -4,183 +4,563 @@ import { ChevronLeft, ChevronRight, RotateCcw, CheckCircle, XCircle, Clock, Book
 const questions = [
   {
     id: 1,
-    question: "¿Cuál es la diferencia principal entre un lenguaje compilado y uno interpretado?",
-    options: [
-      "Los compilados son más lentos que los interpretados",
-      "Los compilados se traducen completamente antes de ejecutarse, los interpretados línea por línea",
-      "Los interpretados solo funcionan en Windows",
-      "No hay diferencia real entre ambos"
-    ],
-    correct: 1,
-    explanation: "Los lenguajes compilados se traducen completamente a código máquina antes de la ejecución, mientras que los interpretados se traducen línea por línea durante la ejecución."
+    question: "Example question 1?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
   },
   {
     id: 2,
-    question: "¿Qué es la 'complejidad temporal' en algoritmos?",
-    options: [
-      "El tiempo que tarda en escribirse el código",
-      "La medida de cuánto tiempo tarda un algoritmo en ejecutarse respecto al tamaño de entrada",
-      "La cantidad de líneas de código",
-      "El tiempo de compilación"
-    ],
-    correct: 1,
-    explanation: "La complejidad temporal mide cómo crece el tiempo de ejecución de un algoritmo en relación al tamaño de los datos de entrada."
+    question: "Example question 2?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
   },
   {
     id: 3,
-    question: "¿Cuál es el principio DRY en programación?",
-    options: [
-      "Don't Repeat Yourself - No te repitas",
-      "Do Run Yearly - Ejecuta anualmente",
-      "Data Requires Yielding - Los datos requieren rendimiento",
-      "Debug Regularly Yourself - Depura regularmente tú mismo"
-    ],
-    correct: 0,
-    explanation: "DRY significa 'Don't Repeat Yourself', un principio que promueve evitar la duplicación de código para mejorar la mantenibilidad."
+    question: "Example question 3?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
   },
   {
     id: 4,
-    question: "¿Qué es un 'stack overflow'?",
-    options: [
-      "Un sitio web para programadores",
-      "Un error que ocurre cuando se agota la memoria de la pila de llamadas",
-      "Un tipo de estructura de datos",
-      "Una técnica de optimización"
-    ],
-    correct: 1,
-    explanation: "Un stack overflow ocurre cuando la pila de llamadas se llena, generalmente por recursión infinita o demasiadas llamadas anidadas."
+    question: "Example question 4?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
   },
   {
     id: 5,
-    question: "¿Cuál es la diferencia entre '==' y '===' en JavaScript?",
-    options: [
-      "No hay diferencia",
-      "'==' compara valor y tipo, '===' solo valor",
-      "'==' compara solo valor, '===' compara valor y tipo",
-      "'===' es más rápido que '=='"
-    ],
+    question: "Example question 5?",
+    options: ["A", "B", "C", "D", "E"],
     correct: 2,
-    explanation: "En JavaScript, '==' hace comparación con coerción de tipos, mientras que '===' hace comparación estricta sin coerción."
+    explanation: "This is a sample explanation."
   },
   {
     id: 6,
-    question: "¿Qué es la herencia en programación orientada a objetos?",
-    options: [
-      "La capacidad de una clase de usar propiedades y métodos de otra clase",
-      "El proceso de crear objetos",
-      "La encapsulación de datos",
-      "El polimorfismo de métodos"
-    ],
-    correct: 0,
-    explanation: "La herencia permite que una clase (clase hija) adquiera las propiedades y métodos de otra clase (clase padre)."
+    question: "Example question 6?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
   },
   {
     id: 7,
-    question: "¿Cuál es el propósito principal de Git?",
-    options: [
-      "Compilar código",
-      "Control de versiones y colaboración en código",
-      "Ejecutar aplicaciones web",
-      "Crear interfaces de usuario"
-    ],
-    correct: 1,
-    explanation: "Git es un sistema de control de versiones distribuido que permite rastrear cambios en el código y facilitar la colaboración."
+    question: "Example question 7?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
   },
   {
     id: 8,
-    question: "¿Qué es una API REST?",
-    options: [
-      "Un tipo de base de datos",
-      "Una arquitectura para servicios web que usa HTTP",
-      "Un lenguaje de programación",
-      "Un framework de JavaScript"
-    ],
-    correct: 1,
-    explanation: "REST es un estilo arquitectónico para servicios web que utiliza métodos HTTP estándar para la comunicación."
+    question: "Example question 8?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
   },
   {
     id: 9,
-    question: "¿Cuál es la diferencia entre un array y una lista enlazada?",
-    options: [
-      "No hay diferencia",
-      "Los arrays tienen tamaño fijo, las listas enlazadas son dinámicas",
-      "Las listas enlazadas son más rápidas para acceso aleatorio",
-      "Los arrays no pueden almacenar números"
-    ],
-    correct: 1,
-    explanation: "Los arrays tienen elementos en posiciones contiguas de memoria, mientras que las listas enlazadas conectan elementos mediante punteros."
+    question: "Example question 9?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
   },
   {
     id: 10,
-    question: "¿Qué es el 'Big O notation'?",
-    options: [
-      "Una forma de documentar código",
-      "Un método de depuración",
-      "Una notación para expresar la complejidad de algoritmos",
-      "Un tipo de comentario en código"
-    ],
+    question: "Example question 10?",
+    options: ["A", "B", "C", "D", "E"],
     correct: 2,
-    explanation: "Big O notation es una forma matemática de describir la complejidad temporal o espacial de un algoritmo en el peor caso."
+    explanation: "This is a sample explanation."
   },
   {
     id: 11,
-    question: "¿Qué es un 'deadlock' en programación concurrente?",
-    options: [
-      "Un error de sintaxis",
-      "Una situación donde dos o más procesos se bloquean mutuamente",
-      "Un tipo de estructura de datos",
-      "Una técnica de optimización"
-    ],
-    correct: 1,
-    explanation: "Un deadlock ocurre cuando dos o más procesos se bloquean indefinidamente esperando recursos que están siendo utilizados por los otros."
+    question: "Example question 11?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
   },
   {
     id: 12,
-    question: "¿Cuál es el propósito de los 'unit tests'?",
-    options: [
-      "Medir la velocidad del código",
-      "Probar componentes individuales del software",
-      "Compilar el programa",
-      "Crear documentación"
-    ],
-    correct: 1,
-    explanation: "Los unit tests verifican que componentes individuales (funciones, métodos, clases) funcionen correctamente de forma aislada."
+    question: "Example question 12?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
   },
   {
     id: 13,
-    question: "¿Qué es el 'refactoring'?",
-    options: [
-      "Agregar nuevas funcionalidades",
-      "Reestructurar código existente sin cambiar su comportamiento externo",
-      "Corregir errores en el código",
-      "Optimizar la velocidad de ejecución"
-    ],
-    correct: 1,
-    explanation: "Refactoring es el proceso de reestructurar código existente para mejorar su legibilidad y mantenibilidad sin alterar su funcionalidad."
+    question: "Example question 13?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
   },
   {
     id: 14,
-    question: "¿Cuál es la diferencia entre SQL y NoSQL?",
-    options: [
-      "SQL es más nuevo que NoSQL",
-      "SQL usa tablas relacionales, NoSQL usa estructuras flexibles",
-      "NoSQL solo funciona con números",
-      "No hay diferencia práctica"
-    ],
-    correct: 1,
-    explanation: "SQL usa bases de datos relacionales con esquemas fijos, mientras que NoSQL permite estructuras de datos más flexibles y variadas."
+    question: "Example question 14?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
   },
   {
     id: 15,
-    question: "¿Qué es la 'programación funcional'?",
-    options: [
-      "Programar solo funciones matemáticas",
-      "Un paradigma que trata la computación como evaluación de funciones matemáticas",
-      "Programar sin usar variables",
-      "Un tipo de lenguaje de programación"
-    ],
-    correct: 1,
-    explanation: "La programación funcional es un paradigma que enfatiza el uso de funciones puras, inmutabilidad y evita efectos secundarios."
+    question: "Example question 15?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 16,
+    question: "Example question 16?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 17,
+    question: "Example question 17?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 18,
+    question: "Example question 18?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 19,
+    question: "Example question 19?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 20,
+    question: "Example question 20?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 21,
+    question: "Example question 21?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 22,
+    question: "Example question 22?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 23,
+    question: "Example question 23?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 24,
+    question: "Example question 24?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 25,
+    question: "Example question 25?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 26,
+    question: "Example question 26?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 27,
+    question: "Example question 27?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 28,
+    question: "Example question 28?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 29,
+    question: "Example question 29?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 30,
+    question: "Example question 30?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 31,
+    question: "Example question 31?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 32,
+    question: "Example question 32?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 33,
+    question: "Example question 33?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 34,
+    question: "Example question 34?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 35,
+    question: "Example question 35?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 36,
+    question: "Example question 36?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 37,
+    question: "Example question 37?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 38,
+    question: "Example question 38?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 39,
+    question: "Example question 39?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 40,
+    question: "Example question 40?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 41,
+    question: "Example question 41?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 42,
+    question: "Example question 42?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 43,
+    question: "Example question 43?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 44,
+    question: "Example question 44?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 45,
+    question: "Example question 45?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 46,
+    question: "Example question 46?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 47,
+    question: "Example question 47?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 48,
+    question: "Example question 48?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 49,
+    question: "Example question 49?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 50,
+    question: "Example question 50?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 51,
+    question: "Example question 51?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 52,
+    question: "Example question 52?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 53,
+    question: "Example question 53?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 54,
+    question: "Example question 54?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 55,
+    question: "Example question 55?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 56,
+    question: "Example question 56?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 57,
+    question: "Example question 57?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 58,
+    question: "Example question 58?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 59,
+    question: "Example question 59?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 60,
+    question: "Example question 60?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 61,
+    question: "Example question 61?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 62,
+    question: "Example question 62?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 63,
+    question: "Example question 63?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 64,
+    question: "Example question 64?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 65,
+    question: "Example question 65?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 66,
+    question: "Example question 66?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 67,
+    question: "Example question 67?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 68,
+    question: "Example question 68?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 69,
+    question: "Example question 69?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 70,
+    question: "Example question 70?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 71,
+    question: "Example question 71?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 72,
+    question: "Example question 72?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 73,
+    question: "Example question 73?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 74,
+    question: "Example question 74?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 75,
+    question: "Example question 75?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 76,
+    question: "Example question 76?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 77,
+    question: "Example question 77?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 78,
+    question: "Example question 78?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 79,
+    question: "Example question 79?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
+  },
+  {
+    id: 80,
+    question: "Example question 80?",
+    options: ["A", "B", "C", "D", "E"],
+    correct: 2,
+    explanation: "This is a sample explanation."
   }
 ];
 
