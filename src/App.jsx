@@ -948,7 +948,7 @@ export default function ProgrammingQuizApp() {
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
               <BookOpen className="w-8 h-8 text-white" />
-              <h1 className="text-2xl font-bold text-white">Examen de Programación</h1>
+              <h1 className="text-2xl font-bold text-white">Linux Essential</h1>
             </div>
             <div className="flex items-center gap-4 text-white/80">
               <div className="flex items-center gap-2">
@@ -985,29 +985,67 @@ export default function ProgrammingQuizApp() {
           </div>
 
           <div className="space-y-3">
-            {question.options.map((option, index) => (
-              <button
-                key={index}
-                onClick={() => handleAnswerSelect(index)}
-                className={`w-full p-4 rounded-xl text-left transition-all duration-200 border-2 ${
-                  answers[currentQuestion] === index
-                    ? 'bg-purple-600/50 border-purple-400 text-white'
-                    : 'bg-white/5 border-white/20 text-white/90 hover:bg-white/10 hover:border-white/40'
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center text-sm font-bold ${
-                    answers[currentQuestion] === index
-                      ? 'bg-purple-500 border-purple-400 text-white'
-                      : 'border-white/40 text-white/60'
-                  }`}>
-                    {String.fromCharCode(65 + index)}
+            {question.options.map((option, index) => {
+              const isAnswered = answers[currentQuestion] !== undefined;
+              const isSelected = answers[currentQuestion] === index;
+              const isCorrect = index === question.correct;
+
+              return (
+                <button
+                  key={index}
+                  onClick={() => handleAnswerSelect(index)}
+                  className={`w-full p-4 rounded-xl text-left transition-all duration-200 border-2 ${
+                    isAnswered
+                      ? isCorrect
+                        ? 'bg-green-600/50 border-green-400 text-white'
+                        : isSelected
+                        ? 'bg-red-600/50 border-red-400 text-white'
+                        : 'bg-white/5 border-white/20 text-white/90'
+                      : isSelected
+                      ? 'bg-purple-600/50 border-purple-400 text-white'
+                      : 'bg-white/5 border-white/20 text-white/90 hover:bg-white/10 hover:border-white/40'
+                  }`}
+                >
+                  <div className="flex items-center gap-3">
+                    <div
+                      className={`w-6 h-6 rounded-full border-2 flex items-center justify-center text-sm font-bold ${
+                        isAnswered
+                          ? isCorrect
+                            ? 'bg-green-500 border-green-400 text-white'
+                            : isSelected
+                            ? 'bg-red-500 border-red-400 text-white'
+                            : 'border-white/40 text-white/60'
+                          : isSelected
+                          ? 'bg-purple-500 border-purple-400 text-white'
+                          : 'border-white/40 text-white/60'
+                      }`}
+                    >
+                      {String.fromCharCode(65 + index)}
+                    </div>
+                    <span className="flex-1">{option}</span>
                   </div>
-                  <span className="flex-1">{option}</span>
-                </div>
-              </button>
-            ))}
+                </button>
+              );
+            })}
           </div>
+
+          {answers[currentQuestion] !== undefined && (
+            <div className="mt-4">
+              {answers[currentQuestion] === question.correct ? (
+                <div className="flex items-center gap-2 text-green-400">
+                  <CheckCircle className="w-5 h-5" />
+                  <span>¡Respuesta correcta!</span>
+                </div>
+              ) : (
+                <div className="flex items-center gap-2 text-red-400">
+                  <XCircle className="w-5 h-5" />
+                  <span>
+                    Respuesta incorrecta. Correcta: {question.options[question.correct]}
+                  </span>
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
         {/* Navigation */}
