@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, RotateCcw, CheckCircle, XCircle, Clock, BookOpen } from 'lucide-react';
 
-const questions = [ 
+const questions = [
     {
       id: 1,
       question: "Which of the following devices represents a hard disk partition?",
@@ -773,7 +773,17 @@ const questions = [
       explanation: "`/etc/profile` sets environment variables and startup settings for all users."
     }
 ];
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
 export default function ProgrammingQuizApp() {
+  const [shuffledQuestions, setShuffledQuestions] = useState(() => shuffleArray([...questions]));
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showResults, setShowResults] = useState(false);
@@ -797,7 +807,7 @@ export default function ProgrammingQuizApp() {
 
   const calculateScore = () => {
     let correct = 0;
-    questions.forEach((question, index) => {
+    shuffledQuestions.forEach((question, index) => {
       if (answers[index] === question.correct) {
         correct++;
       }
@@ -806,6 +816,7 @@ export default function ProgrammingQuizApp() {
   };
 
   const resetQuiz = () => {
+    setShuffledQuestions(shuffleArray([...questions]));
     setCurrentQuestion(0);
     setAnswers({});
     setShowResults(false);
@@ -821,7 +832,7 @@ export default function ProgrammingQuizApp() {
 
   const getProgressColor = () => {
     const answered = Object.keys(answers).length;
-    const percentage = (answered / questions.length) * 100;
+    const percentage = (answered / shuffledQuestions.length) * 100;
     if (percentage < 33) return 'bg-red-500';
     if (percentage < 66) return 'bg-yellow-500';
     return 'bg-green-500';
@@ -829,7 +840,7 @@ export default function ProgrammingQuizApp() {
 
   if (showResults) {
     const score = calculateScore();
-    const percentage = Math.round((score / questions.length) * 100);
+    const percentage = Math.round((score / shuffledQuestions.length) * 100);
     
     return (
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 p-4">
@@ -847,7 +858,7 @@ export default function ProgrammingQuizApp() {
               <div className="text-center mb-6">
                 <div className="text-6xl font-bold text-white mb-2">{percentage}%</div>
                 <div className="text-xl text-white/80">
-                  {score} de {questions.length} respuestas correctas
+                  {score} de {shuffledQuestions.length} respuestas correctas
                 </div>
               </div>
 
@@ -869,7 +880,7 @@ export default function ProgrammingQuizApp() {
             </div>
 
             <div className="space-y-4 mb-8">
-              {questions.map((question, index) => {
+              {shuffledQuestions.map((question, index) => {
                 const userAnswer = answers[index];
                 const isCorrect = userAnswer === question.correct;
                 
@@ -925,9 +936,9 @@ export default function ProgrammingQuizApp() {
     );
   }
 
-  const question = questions[currentQuestion];
+  const question = shuffledQuestions[currentQuestion];
   const answeredCount = Object.keys(answers).length;
-  const progressPercentage = (answeredCount / questions.length) * 100;
+  const progressPercentage = (answeredCount / shuffledQuestions.length) * 100;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 p-4">
@@ -945,7 +956,7 @@ export default function ProgrammingQuizApp() {
                 <span className="font-mono">{formatTime(timeElapsed)}</span>
               </div>
               <div className="text-sm">
-                {currentQuestion + 1} / {questions.length}
+                {currentQuestion + 1} / {shuffledQuestions.length}
               </div>
             </div>
           </div>
@@ -958,7 +969,7 @@ export default function ProgrammingQuizApp() {
             />
           </div>
           <div className="text-center text-white/60 text-sm mt-2">
-            {answeredCount} de {questions.length} preguntas respondidas
+            {answeredCount} de {shuffledQuestions.length} preguntas respondidas
           </div>
         </div>
 
@@ -966,7 +977,7 @@ export default function ProgrammingQuizApp() {
         <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/20 mb-6">
           <div className="mb-6">
             <div className="text-purple-300 text-sm font-semibold mb-2">
-              Pregunta {currentQuestion + 1} de {questions.length}
+              Pregunta {currentQuestion + 1} de {shuffledQuestions.length}
             </div>
             <h2 className="text-2xl font-bold text-white leading-relaxed">
               {question.question}
@@ -1012,7 +1023,7 @@ export default function ProgrammingQuizApp() {
             </button>
 
             <div className="flex gap-2 max-w-md overflow-x-auto">
-              {questions.map((_, index) => (
+              {shuffledQuestions.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentQuestion(index)}
@@ -1029,7 +1040,7 @@ export default function ProgrammingQuizApp() {
               ))}
             </div>
 
-            {currentQuestion === questions.length - 1 ? (
+            {currentQuestion === shuffledQuestions.length - 1 ? (
               <button
                 onClick={() => setShowResults(true)}
                 className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white rounded-xl font-semibold transition-all duration-200 transform hover:scale-105"
@@ -1039,7 +1050,7 @@ export default function ProgrammingQuizApp() {
               </button>
             ) : (
               <button
-                onClick={() => setCurrentQuestion(Math.min(questions.length - 1, currentQuestion + 1))}
+                onClick={() => setCurrentQuestion(Math.min(shuffledQuestions.length - 1, currentQuestion + 1))}
                 className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-xl transition-all duration-200"
               >
                 Siguiente
